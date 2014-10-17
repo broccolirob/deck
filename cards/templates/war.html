@@ -1,0 +1,21 @@
+{% extends 'base_template.html' %}
+
+{% block title %}War{% endblock title %}
+
+{% block content %}
+    <h2>War!</h2>
+    <p>Here's your hand...</p>
+    {% include 'includes/hand.html' with cards=user_cards %}
+    <br>
+    <p>Here's the dealer's hand...</p>
+    {% include 'includes/hand.html' with cards=dealer_cards %}
+    <br>
+    <h2>{% if result == -1 %}
+            The Dealer Wins
+       {% elif result == 0 %}
+            It's a tie
+       {% else %}
+            You've Won!
+       {% endif %}
+    </h2>
+{% endblock content %}

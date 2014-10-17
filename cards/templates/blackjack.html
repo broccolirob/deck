@@ -1,0 +1,12 @@
+{% extends 'base_template.html' %}
+
+{% block title %}Blackjack{% endblock title %}
+
+{% block content %}
+    <h2>Blackjack!</h2>
+    <p>Here's your hand...</p>
+    {% include 'includes/hand.html' with cards=player %}
+    <br>
+    <p>Here's the dealer's hand...</p>
+    {% include 'includes/hand.html' with cards=dealer %}
+{% endblock content %}

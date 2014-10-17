@@ -1,0 +1,21 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+<h1>Card List Index</h1>
+<ul>
+    <li><a href="{% url "cards" %}">All Cards</a></li>
+    <li><a href="{% url "clubs" %}">Clubs Only</a></li>
+    <li><a href="{% url "diamonds_hearts" %}">Diamonds and Hearts Only</a></li>
+    <li><a href="{% url "spade" %}">Just a Spade</a></li>
+    <li><a href="{% url "face" %}">Face Cards Only</a></li>
+    <li><a href="{% url "filters" %}">Card with filters</a></li>
+    <li><a href="{% url "first" %}">First Templatetag</a></li>
+</ul>
+
+<h2>Some Random Inspiration</h2>
+    <div>
+        <h3>{{ comic.safe_title }} - {{ comic.year }}</h3>
+        <img alt="{{ comic.alt }}" src="{{ comic.img }}">
+        <p>{{ comic.transcript }}</p>
+    </div>
+{% endblock %}

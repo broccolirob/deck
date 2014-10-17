@@ -1,0 +1,10 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+    <h2>War Leaderboard</h2>
+    <ol>
+    {% for user in users %}
+        <li>{{ user }}: {{ user.record }}</li>
+    {% endfor %}
+    </ol>
+{% endblock %}

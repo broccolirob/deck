@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Homepage{% endblock title %}</title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="{% static 'js/cards.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cards.css' %}">
+</head>
+<body>
+    <div>
+        <img id="joker" width="40px" src="{% static "img/red_joker.jpg" %}">
+           <a href="{% url 'faq' %}">FAQ</a>
+         | <a href="{% url 'poker' %}">Poker</a>
+         | <a href="{% url 'blackjack' %}">Blackjack</a>
+         | <a href="{% url 'war' %}">War</a>
+         | <a href="{% url 'hearts' %}">Hearts</a>
+         | <a href="{% url 'num_cards' %}">Numbered</a>
+         | <a href="{% url 'leaderboard' %}">Leaderboard</a>
+    <span style="float:right;">
+        {% if user.is_authenticated %}
+           <a href="{% url 'profile' %}">{{ user.username }}</a>
+            {% if user.is_staff %}
+                | <a href="{% url 'admin:index' %}">Admin</a>
+            {% endif %}
+         | <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+         <a href="{% url 'register' %}">Register</a>
+         | <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </span>
+        <img id="joker" width="40px" src="{% static "img/black_joker.jpg" %}">
+    </div>
+    <h1>Welcome to our Card Game!</h1>
+    <hr>
+    {% block content %}{% endblock content %}
+    <hr>
+    <p>Copyright Robert 2014</p>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "base_template.html" %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+    <h2>Profile</h2>
+    <p>Hi {{ user.username }}, you have {{ wins }} wins and {{ losses }} loses.</p>
+    <p>We haven't seen you since {{ user.last_login }}</p>
+    <p>Your email address is {{ user.email }}</p>
+    <p>Results: {{ record }}</p>
+    <img src="{{ user.gravatar_url }}">
+{% endblock content %}

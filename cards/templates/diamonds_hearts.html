@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<a href="{% url "index" %}">Back to Homepage</a>
+<hr>
+<div>
+    {% for card in cards %}
+        {% if card.suit == 2 or card.suit == 3 %}
+            <p>Suite: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+</body>
+</html>

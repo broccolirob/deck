@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<a href="{% url "index" %}">Back to Homepage</a>
+<hr>
+<div>
+    {% for card in cards %}
+        <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+    {% endfor %}
+</div>
+
+</body>
+</html>

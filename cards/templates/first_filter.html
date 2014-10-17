@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+{% load list_filters %}
+<a href="{% url "index" %}">Back to Homepage</a>
+<hr>
+
+<hr>
+{% for card in cards|deal:5 %}
+    <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+{% endfor %}
+
+<hr>
+{% for card in cards %}
+    <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+{% endfor %}
+
+<hr>
+{% for card in cards|rank:"ace" %}
+    <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+{% endfor %}
+
+
+</body>
+</html>
